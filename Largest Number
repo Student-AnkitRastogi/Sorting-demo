@@ -1,0 +1,17 @@
+bool check(int a, int b) {
+    return to_string(a) + to_string(b) > to_string(b) + to_string(a);
+}
+
+class Solution {
+public:
+    string largestNumber(vector<int>& nums) {
+        string result = "";
+        sort(nums.begin(), nums.end(),check);
+        for(auto i:nums) {
+            result = result + to_string(i);
+
+        }
+        if(result[0] == '0') return "0";
+        return result;
+    }
+};
